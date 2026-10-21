@@ -68,12 +68,12 @@ a:focus-visible, button:focus-visible{
 }
 
 .eyebrow{
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  letter-spacing: 0.08em;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--ember);
-  font-weight: 500;
+  font-weight: 600;
   margin: 0 0 14px;
 }
 .eyebrow-light{ color: var(--gold); }
@@ -191,14 +191,27 @@ a:focus-visible, button:focus-visible{
   font-size: clamp(36px, 5vw, 58px);
   margin: 0 0 22px;
 }
-.hero h1 em{ font-style: normal; color: var(--ember); }
+.hero h1 .highlight{
+  background: var(--gold);
+  color: var(--navy-deep);
+  padding: 0.04em 0.28em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 .hero-sub{
   font-size: 18px;
   color: var(--slate);
   max-width: 52ch;
   margin: 0 0 32px;
 }
-.hero-ctas{ display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
+.hero-ctas{ display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-bottom: 30px; }
+.text-link{
+  font-weight: 600;
+  color: var(--navy);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+}
+.text-link:hover{ color: var(--ember); }
 
 .hero-badges{
   display: flex; flex-wrap: wrap; align-items: baseline;
@@ -223,13 +236,17 @@ a:focus-visible, button:focus-visible{
   box-shadow: 0 30px 60px -24px rgba(6,4,58,.35);
 }
 .hero-photo-frame img{ width: 100%; height: 100%; object-fit: cover; }
-.hero-shape{
+.hero-photo-caption{
   position: absolute;
-  width: 68%; height: 68%;
-  border: 3px solid var(--gold);
+  left: 16px; bottom: 16px;
+  max-width: calc(100% - 32px);
+  background: var(--navy-deep);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 8px 14px;
   border-radius: var(--radius);
-  top: -24px; right: -24px;
-  z-index: -1;
 }
 
 /* =========================================================
@@ -530,7 +547,7 @@ a:focus-visible, button:focus-visible{
 
   .hero-inner{ grid-template-columns: 1fr; }
   .hero-visual{ order: -1; }
-  .hero-shape{ display: none; }
+  .hero-photo-caption{ font-size: 12px; }
 
   .service-row{ grid-template-columns: 1fr; gap: 40px; margin-bottom: 72px; }
   .service-row.reverse .service-media,
