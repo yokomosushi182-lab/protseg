@@ -352,6 +352,10 @@ a:focus-visible, button:focus-visible{
   border-radius: 999px;
   color: rgba(255,255,255,.9);
 }
+.chip-list-on-light li{
+  border-color: rgba(11,10,92,.18);
+  color: var(--navy);
+}
 
 /* =========================================================
    Trust / clients
